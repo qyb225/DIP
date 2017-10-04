@@ -1,5 +1,5 @@
 function img_histmatching_A = histogram_matching(img_A, hist_img_C)
-    img_hist_A = histeq(img_A);
+    img_hist_A = histogram_equalization(img_A);
 
     cdf_vec_C = image_cdf(hist_img_C);
     transfer_table_C = hist_eq_transfer_table(cdf_vec_C);
