@@ -10,7 +10,7 @@ fprintf('Press Enter to continue...\n');
 pause;
 
 %10
-filtered_img = imgfilter(img, butterworth_filter(size(img), 10, 1, 'low'));
+filtered_img = butterworth_filter(img, 10, 1, 'low');
 figure;
 subplot(1, 2, 1);
 imshow(filtered_img);
@@ -22,7 +22,7 @@ fprintf('Press Enter to continue...\n');
 pause;
 
 %20
-filtered_img = imgfilter(img, butterworth_filter(size(img), 200, 1, 'low'));
+filtered_img = butterworth_filter(img, 200, 1, 'low');
 figure;
 subplot(1, 2, 1);
 imshow(filtered_img);
@@ -34,7 +34,7 @@ fprintf('Press Enter to continue...\n');
 pause;
 
 %40
-filtered_img = imgfilter(img, butterworth_filter(size(img), 40, 1, 'low'));
+filtered_img = butterworth_filter(img, 40, 1, 'low');
 figure;
 subplot(1, 2, 1);
 imshow(filtered_img);
@@ -46,7 +46,7 @@ fprintf('Press Enter to continue...\n');
 pause;
 
 %80
-filtered_img = imgfilter(img, butterworth_filter(size(img), 80, 1, 'low'));
+filtered_img = butterworth_filter(img, 80, 1, 'low');
 figure;
 subplot(1, 2, 1);
 imshow(filtered_img);

@@ -1,4 +1,12 @@
-function [b_filter] = butterworth_filter(size, D0, level, type)
+function [filtered_img] = butterworth_filter(img, D0, level, type)
+    g = get_spectrum(img);
+    filter_model = b_filter_g(size(img), D0, level, type);
+    filtered_g = g .* filter_model;
+    filtered_centralized_img_mat = real(ifft2(filtered_g));
+    filtered_img = decentralize(filtered_centralized_img_mat);
+end
+
+function [b_filter] = b_filter_g(size, D0, level, type)
     M = size(1);
     N = size(2);
     b_filter = zeros(M, N);
@@ -15,4 +23,3 @@ function [b_filter] = butterworth_filter(size, D0, level, type)
         end
     end
 end
-
